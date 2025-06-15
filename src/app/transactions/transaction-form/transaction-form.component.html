@@ -1,1 +1,16 @@
-<p>transaction-form works!</p>
+<div class="bg-white rounded p-4 shadow-md w-full max-w-md mx-auto my-4">
+  <h2 class="text-lg font-semibold mb-4 text-center">Ajouter une transaction</h2>
+  
+  <form (ngSubmit)="submit()" #form="ngForm" class="flex flex-col gap-4">
+    <select [(ngModel)]="type" name="type" required class="p-2 border rounded">
+      <option value="income">Revenu</option>
+      <option value="expense">Dépense</option>
+    </select>
+    <input type="number" [(ngModel)]="amount" name="amount" placeholder="Montant" required class="p-2 border rounded"/>
+
+    <button type="submit" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
+      Ajouter
+    </button>
+  </form>
+</div>
+
